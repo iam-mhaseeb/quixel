@@ -6,7 +6,7 @@ with io.open('readme.md', encoding='utf_8') as fp:
 
 setup(name='quixel',
       version='1.0',
-      description='A happy light weight framework for semantic text content analysis.',
+      description='A happy light weight framework for text content analysis semantically.',
       long_description=readme,
       long_description_content_type='text/markdown',
       keywords='python, text analysis, nlp',

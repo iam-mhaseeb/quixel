@@ -1,6 +1,6 @@
 # quixel
 
-A happy light weight framework for semantic text content analysis.
+A happy light weight framework for text content analysis semantically.
 
 ## Installation
 
