@@ -1,3 +1,6 @@
+import wikipedia
+import wordcloud.wordcloud
+
 class Quixel:
     """
     Quixel is light weight open source project for text content analysis semantically.
@@ -5,8 +8,16 @@ class Quixel:
 
     def analyze(self, content):
         """
-        Does prediction using model on given text content.
+        Run analysis on given text content.
         :param content: your text content on which you want analysis.
         :return: None.
         """
-        pass
+        sub_topics = wikipedia.search(content)
+        sub_topic_summary = []
+        for topic in sub_topics:
+            sub_topic_summary.append(wikipedia.summary(topic))
+        print(sub_topic_summary)
+
+
+q = Quixel()
+q.analyze("facebook")
