@@ -1,12 +1,14 @@
 # quixel
 
-A happy light weight framework for text content analysis semantically.
+Quixel is light weight open source project for text content analysis semantically.
 
 ## Installation
 
-Installation is simplest with pip:
+Installation is simple:
 
-    pip install quixel
+1. Download repository
+2. Install dependencies with `pip install -r requirements.txt`
+3. You are ready to go
     
 ## Contributing
 
@@ -17,4 +19,4 @@ Feel free to submit pull requests to me.
 * **Muhammad Haseeb** - *Initial work* - [Muhammad Haseeb](https://github.com/iam-mhaseeb)
 
 ## Licensing
-The pycloudy library is [MIT Licenced](LICENSE). Feel free to use commercially of personally.
+The Quixell project is [MIT Licenced](LICENSE). Feel free to use commercially or personally.

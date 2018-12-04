@@ -1,8 +1,8 @@
 class Quixel:
     """
-    Quixel is light weight framework for text content analysis semantically.
+    Quixel is light weight open source project for text content analysis semantically.
     """
-    def train_model(self, corpus):
+    def train_model(self, corpus=self.corpus):
         """
         Train your own model instead of using default.
         :param corpus: corpus is directory data set for learning of model.
@@ -15,7 +15,7 @@ class Quixel:
         Does prediction using model on given text content.
         :param content: your text content on which you want analysis.
         :param model: model either your own trained or default. default is set to quixel model.
-        :return: matrix will predictions.
+        :return: matrix will be predictions.
         """
         pass
 
