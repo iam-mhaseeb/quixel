@@ -82,6 +82,7 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
+quixel_venv/
 .env
 .venv
 env/
