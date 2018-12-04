@@ -1,6 +1,6 @@
 # quixel
 
-Quixel is light weight open source project for text content analysis semantically.
+quixel is light weight open source project for text content analysis semantically.
 
 ## Installation
 
