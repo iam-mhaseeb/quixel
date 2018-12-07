@@ -2,6 +2,7 @@ import nltk
 import numpy as np
 import wikipedia
 from os import path
+from PIL import Image
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
 
@@ -66,6 +67,7 @@ class Quixel:
         :param text: list of content regarding each concept
         :return: None
         """
+        text = ' '.join(f"{word}" for word in text)
         mask = np.array(Image.open(path.join(CURRDIR, "cloud.png")))
         wc = WordCloud(background_color="white",
                        max_words=200,
