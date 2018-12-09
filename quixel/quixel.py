@@ -1,13 +1,17 @@
+from __future__ import absolute_import
+
+import os
 import nltk
-import numpy as np
+import inspect
 import wikipedia
-from os import path
+import numpy as np
 from PIL import Image
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
 
 CONCEPT_TAGS = ['NN', 'NNS', 'NNP', 'NNPS', 'JJ', 'JJR', 'JJS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
-CURRDIR = path.dirname(__file__)
+PATH_TO_SAVE_IMG = os.path.dirname(os.path.abspath((inspect.stack()[1])[1]))
+CURRDIR = os.path.dirname(__file__)
 
 
 class Quixel:
@@ -54,7 +58,7 @@ class Quixel:
         """
         concepts = []
         sub_concept = wikipedia.search(concept)
-        for topic in sub_concept:
+        for topic in sub_concept[:10]:  # selecting only 1st 10 results
             try:
                 concepts.append(wikipedia.summary(topic))
             except:
@@ -68,14 +72,9 @@ class Quixel:
         :return: None
         """
         text = ' '.join(f"{word}" for word in text)
-        mask = np.array(Image.open(path.join(CURRDIR, "cloud.png")))
+        mask = np.array(Image.open(os.path.join(CURRDIR, "cloud.png")))
         wc = WordCloud(background_color="white",
                        max_words=200,
                        mask=mask)
         wc.generate(text)
-        wc.to_file(path.join(CURRDIR, "wordle.png"))
-
-
-
-q = Quixel()
-q.analyze("This is a sample sentence, showing off the stop words filtration.")
+        wc.to_file(PATH_TO_SAVE_IMG, "wordle.png")
